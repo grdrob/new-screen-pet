@@ -59,7 +59,7 @@ func _physics_process(delta: float) -> void:
 		print(new_win_pos)
 		return
 	
-	if !window_position.y >= screen_size.y - window_size.y and !window_position.x <= 0 and !window_position.y <= 50 and !window_position.x >= screen_size.x - window_size.x:
+	if !window_position.y >= taskbar_bottom_y - window_size.y and !window_position.x <= 0 and !window_position.y <= taskbar_top_y and !window_position.x >= screen_size.x - window_size.x:
 		falling = true
 		window_position.y += delta * 1500
 		speed = 0
