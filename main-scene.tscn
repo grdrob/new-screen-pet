@@ -6,6 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://c87v4fke86gyd" path="res://ulitka-2.png" id="4_t871u"]
 [ext_resource type="Texture2D" uid="uid://dbsymshxbwe6t" path="res://ulitka-3.png" id="5_ikad4"]
 [ext_resource type="Texture2D" uid="uid://c0p1qagm4hl4p" path="res://ulitka-4.png" id="6_i1fv3"]
+[ext_resource type="Texture2D" uid="uid://dnjk42wlsawj3" path="res://snailrest-1.png" id="7_i1fv3"]
+[ext_resource type="Texture2D" uid="uid://bhkifirdvsuac" path="res://snailrest-2.png" id="8_pc8c5"]
+[ext_resource type="Texture2D" uid="uid://dit3xgtkkoxsk" path="res://snailrest-3.png" id="9_14fha"]
+[ext_resource type="Texture2D" uid="uid://bco43eb1ig623" path="res://snailrest-4.png" id="10_libv1"]
+[ext_resource type="AudioStream" uid="uid://bd5ockhbdxnbd" path="res://unstick-slug.mp3" id="11_pc8c5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_35doi"]
 animations = [{
@@ -33,6 +38,35 @@ animations = [{
 }],
 "loop": 1,
 "name": &"crawl",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_e304g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_i1fv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pc8c5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_i1fv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_e304g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_14fha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_libv1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_14fha")
+}],
+"loop": 1,
+"name": &"rest",
 "speed": 5.0
 }]
 
@@ -47,10 +81,12 @@ position = Vector2(151.00002, 145)
 scale = Vector2(0.9266667, 1.1716665)
 sprite_frames = SubResource("SpriteFrames_35doi")
 animation = &"crawl"
-frame_progress = 0.5694419
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1272502528]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=528728482]
 position = Vector2(153, 148)
 shape = SubResource("RectangleShape2D_n7ce1")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1717081643]
+stream = ExtResource("11_pc8c5")
